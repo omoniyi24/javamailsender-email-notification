@@ -1,13 +1,13 @@
-package com.springboot.learnemailnotification;
+package com.devsunky.mailer.devsunkyemailnotification;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SendingEmailApplication {
+public class DevsunkyEmailNotificationApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SendingEmailApplication.class, args);
+		SpringApplication.run(DevsunkyEmailNotificationApplication.class, args);
 	}
 
 }

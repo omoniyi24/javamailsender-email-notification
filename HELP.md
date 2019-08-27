@@ -1,12 +1,8 @@
 # Getting Started
 
-### Guides
-The following guides illustrates how to use certain features concretely:
+### Reference Documentation
+For further reference, please consider the following sections:
 
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
-* [Handling Form Submission](https://spring.io/guides/gs/handling-form-submission/)
-* [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
-* [Accessing data with MySQL](https://spring.io/guides/gs/accessing-data-mysql/)
+* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
+* [Java Mail Sender](https://docs.spring.io/spring-boot/docs/{bootVersion}/reference/htmlsingle/#boot-features-email)
 

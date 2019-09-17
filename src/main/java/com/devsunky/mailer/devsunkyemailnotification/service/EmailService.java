@@ -43,7 +43,6 @@ public class EmailService {
         multipart.addBodyPart(messageBodyPart);
         MimeBodyPart attachPart = new MimeBodyPart();
 
-        //attachPart.attachFile("C:\\Users\\OLASUNKANMI\\Pictures\\0.jpg");
         attachPart.attachFile(emailParameter.getFileUploadPath());
         multipart.addBodyPart(attachPart);
         msg.setContent(multipart);

@@ -2,6 +2,9 @@ package com.devsunky.mailer.devsunkyemailnotification.model;
 
 import lombok.Data;
 
+import javax.mail.Multipart;
+import java.io.File;
+
 @Data
 public class EmailParameter {
 
@@ -15,7 +18,7 @@ public class EmailParameter {
 
     private String content;
 
-    private String fileUploadPath;
+    private File fileUploadPath;
 
 
 }

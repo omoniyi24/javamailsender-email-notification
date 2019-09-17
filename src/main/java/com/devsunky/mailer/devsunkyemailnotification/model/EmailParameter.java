@@ -18,7 +18,7 @@ public class EmailParameter {
 
     private String content;
 
-    private File fileUploadPath;
+    private String fileUploadPath;
 
 
 }

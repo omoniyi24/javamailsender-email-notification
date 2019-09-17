@@ -1,10 +1,14 @@
 package com.devsunky.mailer.devsunkyemailnotification.service;
 
 import com.devsunky.mailer.devsunkyemailnotification.model.EmailParameter;
+import org.apache.commons.io.FilenameUtils;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
 
 import javax.mail.*;
 import javax.mail.internet.*;
+import java.io.File;
 import java.io.IOException;
 import java.util.Date;
 import java.util.Properties;
@@ -39,11 +43,14 @@ public class EmailService {
         MimeBodyPart messageBodyPart = new MimeBodyPart();
         messageBodyPart.setContent(emailParameter.getContent(), "text/html");
 
+        String uploadDirectory = FilenameUtils.normalize(emailParameter.getFileUploadPath());
+        Resource resource = new FileSystemResource(uploadDirectory);
+
         Multipart multipart = new MimeMultipart();
         multipart.addBodyPart(messageBodyPart);
         MimeBodyPart attachPart = new MimeBodyPart();
 
-        attachPart.attachFile(emailParameter.getFileUploadPath());
+        attachPart.attachFile(resource.getFile());
         multipart.addBodyPart(attachPart);
         msg.setContent(multipart);
         Transport.send(msg);

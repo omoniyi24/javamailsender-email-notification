@@ -43,16 +43,22 @@ public class EmailService {
         MimeBodyPart messageBodyPart = new MimeBodyPart();
         messageBodyPart.setContent(emailParameter.getContent(), "text/html");
 
-        String uploadDirectory = FilenameUtils.normalize(emailParameter.getFileUploadPath());
-        Resource resource = new FileSystemResource(uploadDirectory);
-
         Multipart multipart = new MimeMultipart();
         multipart.addBodyPart(messageBodyPart);
         MimeBodyPart attachPart = new MimeBodyPart();
 
-        attachPart.attachFile(resource.getFile());
-        multipart.addBodyPart(attachPart);
-        msg.setContent(multipart);
-        Transport.send(msg);
+        if(emailParameter.getFileUploadPath() == null){
+            msg.setContent(multipart);
+            Transport.send(msg);
+        }else{
+            String uploadDirectory = FilenameUtils.normalize(emailParameter.getFileUploadPath());
+            Resource resource = new FileSystemResource(uploadDirectory);
+            attachPart.attachFile(resource.getFile());
+            multipart.addBodyPart(attachPart);
+            msg.setContent(multipart);
+            Transport.send(msg);
+        }
+
+
     }
 }

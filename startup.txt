@@ -1,1 +1,0 @@
-docker container run -v C:/Users/OLASUNKANMI/Desktop/DOCKER/MyDockerVol:/host/MyDockerVol/ -d --name mail-service -p 2020:2020 devsunky-email-notification

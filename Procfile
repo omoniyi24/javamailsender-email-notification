@@ -1,1 +1,0 @@
-web: java $JAVA_OPTS -jar target/dependency/devsunky-email-notification-0.0.1-SNAPSHOT.jar target/*.war
